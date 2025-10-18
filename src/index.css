@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+/*Clere user button adjust*/
+.cl-avatarBox{
+    width: 2rem;
+    height: 2rem;
+}
