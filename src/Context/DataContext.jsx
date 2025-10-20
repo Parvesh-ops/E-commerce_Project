@@ -18,8 +18,17 @@ const DataContext = ({ children }) => {
     }
   }
 
+    const uniqueCategories = (data, property) => {
+    const allValues = data?.map((item) => item[property]); // Extract all categories
+    const uniqueValues = ["All",...new Set(allValues)]; // Remove duplicates
+    return uniqueValues;
+  };
+
+  const categories = uniqueCategories(data, "category");
+  const brand = uniqueCategories(data, "brand");
+
   return (
-    <dataContext.Provider value={{ data, setData, fetchProducts }}>
+    <dataContext.Provider value={{ data, setData, fetchProducts, categories,brand  }}>
       {children}
     </dataContext.Provider>
   )

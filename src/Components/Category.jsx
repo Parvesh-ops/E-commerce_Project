@@ -2,16 +2,10 @@ import React, { useContext } from "react";
 import { dataContext } from "../Context/DataContext";
 
 const Category = () => {
-  const { data } = useContext(dataContext);
+  const { categories } = useContext(dataContext);
 
   // ✅ Function to get unique categories
-  const uniqueCategories = (data, property) => {
-    const allValues = data?.map((item) => item[property]); // Extract all categories
-    const uniqueValues = [...new Set(allValues)]; // Remove duplicates
-    return uniqueValues;
-  };
 
-  const categories = uniqueCategories(data, "category");
   console.log(categories);
 
   return (
