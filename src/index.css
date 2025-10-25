@@ -5,3 +5,11 @@
     width: 2rem;
     height: 2rem;
 }
+
+/* Input colors */
+input{
+    background: #fff;
+    accent-color: red;
+    border: 1px solid #ccc;
+    color: #333;
+}
