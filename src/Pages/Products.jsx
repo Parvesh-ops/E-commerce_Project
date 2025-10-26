@@ -16,6 +16,7 @@ const Products = () => {
 
   useEffect(() => {
     fetchProducts()
+    window.scrollTo(0,0)
   }, [])
 
   const handelCategoryChange = (e) => {

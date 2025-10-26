@@ -1,7 +1,9 @@
 import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const ProductCard = ({ products }) => {
+ const navigate =  useNavigate()
   return (
     <div className="border rounded-lg border-gray-200 cursor-pointer hover:scale-105 hover:shadow-xl transition-transform duration-300 bg-white overflow-hidden">
       {/* Product Image */}
@@ -9,6 +11,7 @@ const ProductCard = ({ products }) => {
         src={products.image}
         alt={products.title}
         className="bg-gray-100 aspect-square w-full object-contain p-4"
+        onClick={()=>navigate(`/products/${products.id}`)}
       />
 
       {/* Product Info */}
