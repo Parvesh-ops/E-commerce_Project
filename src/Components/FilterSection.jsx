@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { dataContext } from '../Context/DataContext'
 
-const FilterSection = ({ Search, setSearch, Brand, priceRange, setpriceRange, Category,handelBrandChange, handelCategoryChange }) => {
+const FilterSection = ({ Search, setSearch, Brand, priceRange, setpriceRange, Category, handelBrandChange, handelCategoryChange }) => {
   const { categories, brand } = useContext(dataContext)
 
   return (
@@ -58,6 +58,8 @@ const FilterSection = ({ Search, setSearch, Brand, priceRange, setpriceRange, Ca
         </label>
         <input
           type="range"
+          min='0'
+          max='1000'
           value={priceRange[1]}
           onChange={(e) => setpriceRange([priceRange[0], Number(e.target.value)])}
         />
