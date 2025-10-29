@@ -19,7 +19,7 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <ul className="flex space-x-6">
-          {['/', '/products', '/about', '/contact'].map((path, index) => {
+          {['/', '/products', '/about', '/contact',].map((path, index) => {
             const labels = ['Home', 'Products', 'About', 'Contact'];
             return (
               <NavLink

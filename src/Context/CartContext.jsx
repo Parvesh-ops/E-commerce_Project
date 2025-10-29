@@ -23,7 +23,7 @@ const CartContext = ({ children }) => {
     })
 
     // Optional: show small alert (temporary feedback)
-    alert(`🛍️ ${product.title} added to cart!`)
+    alert(' added to cart!')
   }
 
   // ✅ Remove from cart

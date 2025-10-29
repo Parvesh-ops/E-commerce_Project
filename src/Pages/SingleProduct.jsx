@@ -1,15 +1,19 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useEffect, useState, useContext } from 'react'
+import { useParams, useNavigate } from 'react-router-dom' // ✅ Import useNavigate
 import axios from 'axios'
 import Loading from "../assets/Loading4.webm"
 import Breadcrums from '../Components/Breadcrums'
 import { FaShoppingCart } from "react-icons/fa"
+import { cartContext } from '../Context/CartContext'
 
 const SingleProduct = () => {
   const { id } = useParams()
   const [product, setProduct] = useState(null)
   const [loading, setLoading] = useState(true)
   const [quantity, setQuantity] = useState(1)
+
+  const { addToCart } = useContext(cartContext)
+  const navigate = useNavigate() // ✅ Initialize navigation
 
   // ✅ Fetch single product
   const getSingleProduct = async () => {
@@ -50,6 +54,19 @@ const SingleProduct = () => {
   // ✅ Handle optional discount
   const discount = product.discount || 0
   const originalPrice = Math.round(product.price + (product.price * discount / 100))
+
+  // ✅ Add to cart handler
+  const handleAddToCart = () => {
+    const productWithQty = { ...product, quantity }
+    addToCart(productWithQty)
+  }
+
+  // ✅ Handle Buy Now button
+  const handleBuyNow = () => {
+
+    // Navigate to BuyNow page
+    navigate('/buynow')
+  }
 
   return (
     <div className='px-4 pb-4 md:px-0'>
@@ -100,11 +117,22 @@ const SingleProduct = () => {
             />
           </div>
 
-          {/* 🛒 Add to Cart Button */}
+          {/* 🛒 Action Buttons */}
           <div className='flex gap-4 mt-4'>
+            {/* Add to Cart */}
             <button
-              className='px-6 flex items-center gap-2 py-2 text-lg bg-red-500 hover:bg-red-600 transition text-white rounded-md shadow-md' >
-              <FaShoppingCart className='w-6 h-6' /> Add to Cart
+              onClick={handleAddToCart}
+              className='px-6 flex items-center gap-2 py-2 text-lg bg-red-500 hover:bg-red-600 transition text-white rounded-md shadow-md'
+            >
+              <FaShoppingCart /> Add to Cart
+            </button>
+
+            {/* Buy Now */}
+            <button
+              onClick={handleBuyNow}
+              className='px-6 flex items-center gap-2 py-2 text-lg bg-red-500 hover:bg-red-600 transition text-white rounded-md shadow-md'
+            >
+              💳 Buy Now
             </button>
           </div>
         </div>

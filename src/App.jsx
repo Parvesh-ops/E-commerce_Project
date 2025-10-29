@@ -8,6 +8,7 @@ import Cart from './Pages/Cart.jsx'
 import Navbar from './Components/Navbar.jsx'
 import Footer from './Components/Footer.jsx'
 import SingleProduct from './Pages/SingleProduct.jsx'
+import BuyNow from './Components/BuyNow.jsx'
 
 const App = () => {
   return (
@@ -21,6 +22,8 @@ const App = () => {
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/cart' element={<Cart />} />
+          <Route path='/buynow' element={<BuyNow />} />
+
         </Routes>
         <Footer />
       </BrowserRouter>
