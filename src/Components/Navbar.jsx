@@ -43,7 +43,7 @@ const Navbar = () => {
         <div className="flex items-center">
           <NavLink to="/cart" className="relative mx-[26px]">
             <FaShoppingCart className="h-6 w-6" />
-            <span className="bg-red-500 px-2 rounded-full absolute -top-3 -right-4 text-white text-sm">0</span>
+            <span className="bg-red-500 px-2 rounded-full absolute -top-3 -right-4 text-white text-sm"></span>
           </NavLink>
 
           {/* Clerk Authentication */}

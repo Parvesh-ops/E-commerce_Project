@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.jsx'
 import { ClerkProvider } from '@clerk/clerk-react'
 import DataContext from './Context/DataContext.jsx'
+import CartContext from './Context/CartContext.jsx'
 
 
 // Import your Publishable Key
@@ -15,11 +16,13 @@ if (!PUBLISHABLE_KEY) {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <CartContext>
     <DataContext>
       <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
         <App />
       </ClerkProvider>
     </DataContext>
+    </CartContext>
 
   </StrictMode>,
 )
