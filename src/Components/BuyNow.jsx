@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const BuyNow = () => {
-  const [user, setUser] = useState({ name: "", contactNo: "",location:"" });
+  const [user, setUser] = useState({ name: "", contactNo: "", location: "" });
   const [error, setError] = useState({});
 
   const changeUser = (e) => {
@@ -19,12 +19,15 @@ const BuyNow = () => {
     if (!user.contactNo.trim()) {
       newErrors.contactNo = "Contact number is required";
     }
+    if (!user.location.trim()) {
+      newErrors.location = "Location is required";
+    }
 
     if (Object.keys(newErrors).length > 0) {
       setError(newErrors);
     } else {
       setError({});
-      setUser({ name: "", contactNo: "", location:"" });
+      setUser({ name: "", contactNo: "", location: "" });
     }
   };
 
@@ -60,7 +63,7 @@ const BuyNow = () => {
               Contact Number
             </label>
             <input
-              type="number"
+              type="tel"
               placeholder="Enter your contact number"
               name="contactNo"
               value={user.contactNo}
@@ -84,7 +87,7 @@ const BuyNow = () => {
               onChange={changeUser}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none"
             />
-            {error.location&& (
+            {error.location && (
               <p className="text-red-500 text-sm mt-1">{error.location}</p>
             )}
           </div>
