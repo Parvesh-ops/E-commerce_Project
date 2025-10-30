@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const BuyNow = () => {
-  const [user, setUser] = useState({ name: "", contactNo: "" });
+  const [user, setUser] = useState({ name: "", contactNo: "",location:"" });
   const [error, setError] = useState({});
 
   const changeUser = (e) => {
@@ -24,7 +24,7 @@ const BuyNow = () => {
       setError(newErrors);
     } else {
       setError({});
-      setUser({ name: "", contactNo: "" });
+      setUser({ name: "", contactNo: "", location:"" });
     }
   };
 
@@ -71,6 +71,23 @@ const BuyNow = () => {
               <p className="text-red-500 text-sm mt-1">{error.contactNo}</p>
             )}
           </div>
+          {/* Location  field*/}
+          <div>
+            <label className="block text-gray-700 font-medium mb-1">
+              Location
+            </label>
+            <input
+              type="location"
+              placeholder="Enter your location"
+              name="location"
+              value={user.location}
+              onChange={changeUser}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-400 focus:outline-none"
+            />
+            {error.location&& (
+              <p className="text-red-500 text-sm mt-1">{error.location}</p>
+            )}
+          </div>
 
           {/* Submit Button */}
           <button
@@ -81,10 +98,6 @@ const BuyNow = () => {
           </button>
         </form>
 
-        {/* Optional – back or info section */}
-        <p className="text-center text-gray-500 text-sm mt-4">
-          We’ll contact you shortly after your order is placed.
-        </p>
       </div>
     </div>
   );
