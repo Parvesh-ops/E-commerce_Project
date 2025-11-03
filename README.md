@@ -2,7 +2,6 @@ Shoes E-Commerce Website
 
 A modern, responsive, and user-friendly e-commerce web application designed for showcasing and selling shoes. This project aims to provide a clean, intuitive, and seamless shopping experience, from browsing products to adding them to the cart and checking out.
 
-
 ✨ Key Features
 
 Product Listing:
