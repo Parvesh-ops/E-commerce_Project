@@ -1,8 +1,11 @@
  E-Commerce Website
 
 A modern, responsive, and user-friendly e-commerce web application designed for showcasing and selling Products. This project aims to provide a clean, intuitive, and seamless shopping experience, from browsing products to adding them to the cart and checking out.
+
 Demo:
 ![image](https://github.com/Parvesh-ops/E-commerce_Project/blob/42024e7507fc2d55f16bd8f38ae3b4e4e486e3ca/MixCollage-09-Nov-2025-05-01-PM-3389.jpg)
+![image](https://github.com/Parvesh-ops/E-commerce_Project/blob/51a9027b8a6a1b84b35f237899aae31884fa3d19/MixCollage-09-Nov-2025-05-02-PM-3098.jpg)
+
 
 ✨ Key Features
 
