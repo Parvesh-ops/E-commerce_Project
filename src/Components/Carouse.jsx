@@ -5,8 +5,13 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import Category from "./Category";
+import { useNavigate } from "react-router-dom";
 
 const Carouse = () => {
+ const navigate = useNavigate()
+ const handelProducts = ()=>{
+  navigate("/products")
+ }
   const { data, fetchProducts } = useContext(dataContext);
 
   useEffect(() => {
@@ -71,7 +76,7 @@ const Carouse = () => {
                 <p className="text-gray-400 line-clamp-3 md:w-[400px] pr-0 md:pr-7">
                   {item.description}
                 </p>
-                <button className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition cursor-pointer mt-2">
+                <button onClick={handelProducts} className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition cursor-pointer mt-2">
                   Shop Now
                 </button>
               </div>
