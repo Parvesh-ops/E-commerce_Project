@@ -14,46 +14,48 @@ const getPages = (current, total) => {
 };
 
 const Pagination = ({ Page, pageHandler, dynamicPage }) => {
-  // console.log("Received pageHandler:", typeof pageHandler); 
   const pages = getPages(Page, dynamicPage);
 
   return (
-    <div className="mt-10 flex items-center space-x-3 justify-center">
+    <div className="mt-6 sm:mt-10 flex flex-wrap justify-center items-center gap-2 sm:gap-3">
+      {/* Prev Button */}
       <button
         disabled={Page === 1}
         onClick={() => pageHandler(Page - 1)}
-        className={`px-3 py-1 rounded-md text-white ${
+        className={`px-2 sm:px-3 py-1 sm:py-2 rounded-md text-white text-sm sm:text-base ${
           Page === 1
             ? "bg-red-400 cursor-not-allowed"
-            : "bg-red-500 hover:bg-red-600 cursor-pointer"
+            : "bg-red-500 hover:bg-red-600 cursor-pointer transition-colors"
         }`}
       >
         Prev
       </button>
 
+      {/* Page Numbers */}
       {pages.map((item, index) => (
         <span
           key={index}
           onClick={() => typeof item === "number" && pageHandler(item)}
-          className={`px-2 cursor-pointer ${
+          className={`px-2 sm:px-3 py-1 sm:py-2 rounded-md text-sm sm:text-base ${
             item === Page
-              ? "font-bold text-red-600 underline"
+              ? "font-bold text-red-600 underline bg-white/10"
               : item === "..."
               ? "text-gray-500 cursor-default"
-              : "text-black hover:text-red-500"
+              : "text-black hover:text-red-500 cursor-pointer transition-colors"
           }`}
         >
           {item}
         </span>
       ))}
 
+      {/* Next Button */}
       <button
         disabled={Page === dynamicPage}
         onClick={() => pageHandler(Page + 1)}
-        className={`px-3 py-1 rounded-md text-white ${
+        className={`px-2 sm:px-3 py-1 sm:py-2 rounded-md text-white text-sm sm:text-base ${
           Page === dynamicPage
             ? "bg-red-400 cursor-not-allowed"
-            : "bg-red-500 hover:bg-red-600 cursor-pointer"
+            : "bg-red-500 hover:bg-red-600 cursor-pointer transition-colors"
         }`}
       >
         Next

@@ -7,15 +7,23 @@ const ProductCard = ({ products }) => {
   const navigate = useNavigate();
   const { addToCart, cartItems } = useContext(cartContext);
 
+  // Find quantity in cart
+  const cartItem = cartItems.find((item) => item.id === products.id);
+  const quantityInCart = cartItem ? cartItem.quantity : 0;
+
   return (
-    <div className="border rounded-lg border-gray-200 cursor-pointer hover:scale-105 hover:shadow-xl transition-transform duration-300 bg-white overflow-hidden">
+    <div className="border rounded-lg border-gray-200 hover:shadow-xl transition-transform duration-300 bg-white overflow-hidden">
       {/* Product Image */}
-      <img
-        src={products.image}
-        alt={products.title}
-        className="bg-gray-100 aspect-square w-full object-contain p-4"
+      <div
+        className="bg-gray-100 aspect-square w-full flex items-center justify-center p-4 cursor-pointer"
         onClick={() => navigate(`/products/${products.id}`)}
-      />
+      >
+        <img
+          src={products.image}
+          alt={products.title}
+          className="object-contain h-full w-full"
+        />
+      </div>
 
       {/* Product Info */}
       <div className="p-3">
@@ -23,7 +31,7 @@ const ProductCard = ({ products }) => {
           {products.title}
         </h1>
         <p className="text-lg font-bold text-gray-900 mb-3">
-          ${products.price}
+          ${products.price.toFixed(2)}
         </p>
 
         {/* Add to Cart Button */}
@@ -32,7 +40,7 @@ const ProductCard = ({ products }) => {
           className="bg-red-500 hover:bg-red-600 px-4 py-2 text-base rounded-md text-white w-full flex items-center justify-center gap-2 font-semibold transition-colors duration-200"
         >
           <FaShoppingCart className="w-5 h-5" />
-          Add to Cart
+          Add to Cart {quantityInCart > 0 && `(${quantityInCart})`}
         </button>
       </div>
     </div>
