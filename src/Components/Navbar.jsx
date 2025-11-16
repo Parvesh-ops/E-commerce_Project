@@ -16,12 +16,12 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="bg-white py-3 shadow-2xl fixed w-full z-50">
+    <div className="bg-white py-3 shadow-2xl fixed top-0 left-0 right-0 w-full z-50">
       <div className="max-w-6xl mx-auto flex justify-between items-center px-4">
 
         {/* Logo */}
         <Link to="/">
-          <h1 className="text-3xl font-bold">
+          <h1 className="text-2xl sm:text-3xl font-bold">
             <span className="text-red-500 font-serif">L</span>uxora
           </h1>
         </Link>
@@ -73,7 +73,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white shadow-lg">
+        <div className="md:hidden bg-white shadow-lg absolute top-full left-0 w-full z-50 max-h-[60vh] overflow-auto">
           <ul className="flex flex-col space-y-2 px-4 py-4">
             {links.map((link) => (
               <NavLink

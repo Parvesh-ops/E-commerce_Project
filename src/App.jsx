@@ -5,6 +5,7 @@ import Products from './Pages/Products.jsx'
 import About from './Pages/About.jsx'
 import Contact from './Pages/Contact.jsx'
 import Cart from './Pages/Cart.jsx'
+import CartDetails from './Pages/CartDetails.jsx'
 import Navbar from './Components/Navbar.jsx'
 import Footer from './Components/Footer.jsx'
 import SingleProduct from './Pages/SingleProduct.jsx'
@@ -22,6 +23,7 @@ const App = () => {
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/cart' element={<Cart />} />
+          <Route path='/cart-details' element={<CartDetails />} />
           <Route path='/buynow' element={<BuyNow />} />
 
         </Routes>

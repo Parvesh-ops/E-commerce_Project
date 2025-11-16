@@ -15,7 +15,7 @@ const ProductCard = ({ products }) => {
     <div className="border rounded-lg border-gray-200 hover:shadow-xl transition-transform duration-300 bg-white overflow-hidden">
       {/* Product Image */}
       <div
-        className="bg-gray-100 aspect-square w-full flex items-center justify-center p-4 cursor-pointer"
+        className="bg-gray-100 aspect-square w-full flex items-center justify-center p-2 sm:p-4 cursor-pointer min-h-[160px] sm:min-h-[220px]"
         onClick={() => navigate(`/products/${products.id}`)}
       >
         <img
@@ -34,9 +34,9 @@ const ProductCard = ({ products }) => {
           ${products.price.toFixed(2)}
         </p>
 
-        {/* Add to Cart Button */}
+        {/* Add to Cart Button: navigate to cart-details so we can collect user info */}
         <button
-          onClick={() => addToCart(products)}
+          onClick={() => navigate('/cart-details', { state: { product: products, quantity: 1 } })}
           className="bg-red-500 hover:bg-red-600 px-4 py-2 text-base rounded-md text-white w-full flex items-center justify-center gap-2 font-semibold transition-colors duration-200"
         >
           <FaShoppingCart className="w-5 h-5" />

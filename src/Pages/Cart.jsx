@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { cartContext } from '../Context/CartContext';
+import React, { useContext } from "react";
+import { cartContext } from "../Context/CartContext";
 
 const Cart = () => {
   const { cartItems, removeFromCart, clearCart } = useContext(cartContext);
@@ -23,22 +23,32 @@ const Cart = () => {
         Shopping Cart
       </h2>
 
-      <ul className="space-y-4">
+      <ul className="space-y-6">
         {cartItems.map((item) => (
           <li
             key={item.id}
-            className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b pb-3"
+            className="flex flex-col sm:flex-row items-center sm:items-start gap-4 border-b pb-4"
           >
-            <div className="w-full sm:w-3/4">
+            {/* IMAGE */}
+            <img
+              src={item.image}
+              alt={item.title}
+              className="w-32 h-32 object-contain rounded"
+            />
+
+            {/* DETAILS */}
+            <div className="flex-1 w-full">
               <h3 className="font-semibold text-lg sm:text-xl">{item.title}</h3>
-              <p className="text-gray-500">Qty: {item.quantity}</p>
-              <p className="text-red-500 font-bold mt-1 sm:mt-0">
+              <p className="text-gray-500">Quantity: {item.quantity}</p>
+              <p className="text-red-600 font-bold mt-1">
                 ${(item.price * item.quantity).toFixed(2)}
               </p>
             </div>
+
+            {/* REMOVE BUTTON */}
             <button
               onClick={() => removeFromCart(item.id)}
-              className="mt-2 sm:mt-0 sm:ml-4 text-sm bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 transition-colors"
+              className="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 transition-colors"
             >
               Remove
             </button>
@@ -46,11 +56,15 @@ const Cart = () => {
         ))}
       </ul>
 
-      <div className="mt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0">
-        <h3 className="text-xl sm:text-2xl font-bold">Total: ${total.toFixed(2)}</h3>
+      {/* TOTAL + CLEAR CART */}
+      <div className="mt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <h3 className="text-xl sm:text-2xl font-bold">
+          Total: ${total.toFixed(2)}
+        </h3>
+
         <button
           onClick={clearCart}
-          className="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-900 transition-colors"
+          className="bg-gray-800 text-white px-5 py-2 rounded-md hover:bg-gray-900 transition-colors"
         >
           Clear Cart
         </button>

@@ -13,3 +13,8 @@ input{
     border: 1px solid #ccc;
     color: #333;
 }
+
+/* Prevent page content from hiding under fixed navbar */
+body {
+    padding-top: 4rem; /* adjust if navbar height changes */
+}
