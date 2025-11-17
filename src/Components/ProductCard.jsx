@@ -34,9 +34,9 @@ const ProductCard = ({ products }) => {
           ${products.price.toFixed(2)}
         </p>
 
-        {/* Add to Cart Button: navigate to cart-details so we can collect user info */}
+        {/* Add to Cart Button */}
         <button
-          onClick={() => navigate('/cart-details', { state: { product: products, quantity: 1 } })}
+          onClick={() => addToCart(products)}
           className="bg-red-500 hover:bg-red-600 px-4 py-2 text-base rounded-md text-white w-full flex items-center justify-center gap-2 font-semibold transition-colors duration-200"
         >
           <FaShoppingCart className="w-5 h-5" />

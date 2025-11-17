@@ -52,8 +52,8 @@ const SingleProduct = () => {
   const originalPrice = Math.round(product.price + (product.price * discount / 100));
 
   const handleAddToCart = () => {
-    // Navigate to details page so we can collect user info before adding to cart
-    navigate('/cart-details', { state: { product, quantity } });
+    const productWithQty = { ...product, quantity };
+    addToCart(productWithQty);
   };
 
   const handleBuyNow = () => {
