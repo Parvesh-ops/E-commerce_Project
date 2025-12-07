@@ -10,6 +10,7 @@ import Navbar from './Components/Navbar.jsx'
 import Footer from './Components/Footer.jsx'
 import SingleProduct from './Pages/SingleProduct.jsx'
 import BuyNow from './Components/BuyNow.jsx'
+import Dashboard from './Pages/Dashboard.jsx'
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path='/contact' element={<Contact />} />
           <Route path='/cart' element={<Cart />} />
           <Route path='/buynow' element={<BuyNow />} />
+          <Route path='/dashboard' element ={<Dashboard />} />
 
         </Routes>
         <Footer />
