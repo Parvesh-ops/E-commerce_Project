@@ -21,9 +21,6 @@ const CartContext = ({ children }) => {
       // Otherwise, add a new product with quantity 1
       return [...prevItems, { ...product, quantity: 1 }]
     })
-
-    // Optional: show small alert (temporary feedback)
-    alert(' added to cart!')
   }
 
   // ✅ Remove from cart
