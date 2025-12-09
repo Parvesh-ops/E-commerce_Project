@@ -43,7 +43,7 @@ const SingleProduct = () => {
   if (!product) {
     return (
       <div className='flex items-center justify-center h-screen text-xl text-gray-600'>
-        Product not found 😔
+        Product not found 
       </div>
     );
   }
