@@ -125,10 +125,32 @@ const BuyNow = () => {
                 Card
               </label>
               <label className="flex items-center gap-2">
+                <input type="radio" name="paymentMethod" value="esewa" checked={form.paymentMethod === 'esewa'} onChange={change} />
+                E-sewa
+              </label>
+              <label className="flex items-center gap-2">
+                <input type="radio" name="paymentMethod" value="khalti" checked={form.paymentMethod === 'khalti'} onChange={change} />
+                Khalti
+              </label>
+              <label className="flex items-center gap-2">
                 <input type="radio" name="paymentMethod" value="cod" checked={form.paymentMethod === 'cod'} onChange={change} />
                 Cash on Delivery
               </label>
             </div>
+
+            {form.paymentMethod === 'esewa' && (
+              <div className="mt-3">
+                <label className="text-sm font-medium">Esewa Number</label>
+                <input name="esewaNumber" value={form.cardNumber} onChange={change} placeholder="9824336431" className="w-full mt-1 border rounded px-3 py-2" />
+              </div>
+            )}
+
+            {form.paymentMethod === 'khalti' && (
+              <div className="mt-3">
+                <label className="text-sm font-medium">Card Number</label>
+                <input name="khaltiNumber" value={form.cardNumber} onChange={change} placeholder="4242 4242 4242 4242" className="w-full mt-1 border rounded px-3 py-2" />
+              </div>
+            )}
 
             {form.paymentMethod === 'card' && (
               <div className="mt-3">
