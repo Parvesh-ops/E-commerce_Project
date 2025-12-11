@@ -59,6 +59,7 @@ import Charts from './Dashboard/Charts.jsx'
 import Sales from './Dashboard/Sales.jsx'
 import Items from './Dashboard/Items.jsx'
 import Customers from './Dashboard/Customers.jsx'
+import Settings from './Dashboard/Settings.jsx'
 
 
 
@@ -110,6 +111,7 @@ const App = () => {
       {path : 'sales' , element :<Sales />},
       {path : 'items' , element :<Items />},
       {path : 'customers' , element :<Customers />},
+      {path : 'settings' , element :<Settings />},
       
     ]
   }
