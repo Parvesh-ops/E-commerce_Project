@@ -1,9 +1,20 @@
-import { Link } from "react-router-dom";
-import { Home, BarChart2, DollarSign, ShoppingCart, Users, Settings, FileText, CreditCard, Mail } from "lucide-react"; 
+import { NavLink } from "react-router-dom";
+import {
+  Home,
+  BarChart2,
+  DollarSign,
+  ShoppingCart,
+  Users,
+  Settings,
+  FileText,
+  CreditCard,
+  Mail
+} from "lucide-react";
 
 export default function Sidebar() {
   return (
     <aside className="w-64 bg-gradient-to-b from-white to-white text-gray-900 shadow-2xl min-h-screen p-6">
+      
       <div className="mb-8">
         <h1 className="text-2xl font-bold text-red-600">
           L<span className="text-black font-bold">uxora</span>
@@ -11,38 +22,126 @@ export default function Sidebar() {
       </div>
 
       <nav className="flex flex-col gap-3">
+        {/* MENU SECTION */}
         <h2 className="text-black font-bold uppercase text-sm mb-2">Menu</h2>
-        <Link to="/" className="hover:bg-gray-400  p-2 rounded-xl flex items-center gap-2 ">
+
+        {/* Dashboard */}
+        <NavLink
+          to="/dashboard"
+          className={({ isActive }) =>
+            `p-2 rounded-xl flex items-center gap-2 ${
+              isActive ? "bg-gray-400" : ''
+            } hover:bg-gray-300`
+          }
+        >
           <Home size={20} /> Dashboard
-        </Link>
-        <Link to="/charts" className="hover:bg-gray-400 p-2 rounded-xl flex items-center gap-2">
+        </NavLink>
+
+        {/* Charts */}
+        <NavLink
+          to="/dashboard/charts"
+          className={({ isActive }) =>
+            `p-2 rounded-xl flex items-center gap-2 ${
+              isActive ? "bg-gray-400" : ''
+            } hover:bg-gray-300`
+          }
+        >
           <BarChart2 size={20} /> Charts
-        </Link>
-        <Link to="/sales" className="hover:bg-gray-400 p-2 rounded-xl flex items-center gap-2">
+        </NavLink>
+
+        {/* Sales */}
+        <NavLink
+          to="/dashboard/sales"
+          className={({ isActive }) =>
+            `p-2 rounded-xl flex items-center gap-2 ${
+              isActive ? "bg-gray-400" : ''
+            } hover:bg-gray-300`
+          }
+        >
           <DollarSign size={20} /> Sales
-        </Link>
+        </NavLink>
 
-        <h2 className="text-black font-bold uppercase text-sm mt-4 mb-2">Management</h2>
-        <Link to="/products" className="hover:bg-gray-400 p-2 rounded-xl flex items-center gap-2">
+        {/* MANAGEMENT SECTION */}
+        <h2 className="text-black font-bold uppercase text-sm mt-4 mb-2">
+          Management
+        </h2>
+
+        {/* Products */}
+        <NavLink
+          to="/dashboard/items"
+          className={({ isActive }) =>
+            `p-2 rounded-xl flex items-center gap-2 ${
+              isActive ? "bg-gray-400" : ''
+            } hover:bg-gray-300`
+          }
+        >
           <ShoppingCart size={20} /> Products
-        </Link>
-        <Link to="/customers" className="hover:bg-gray-400 p-2 rounded-xl flex items-center gap-2">
-          <Users size={20} /> Customers
-        </Link>
-        <Link to="/warehouse" className="hover:bg-gray-400 p-2 rounded-xl flex items-center gap-2">
-          <Settings size={20} /> setting
-        </Link>
-        <Link to="/reports" className="hover:bg-gray-400 p-2 rounded-xl flex items-center gap-2">
-          <FileText size={20} /> Reports
-        </Link>
+        </NavLink>
 
-        <h2 className="text-black font-bold uppercase text-sm mt-4 mb-2">Notifications</h2>
-        <Link to="/transactions" className="hover:bg-gray-400 p-2 rounded-xl flex items-center gap-2">
+        {/* Customers */}
+        <NavLink
+          to="/dashboard/customers"
+          className={({ isActive }) =>
+            `p-2 rounded-xl flex items-center gap-2 ${
+              isActive ? "bg-gray-400" : ''
+            } hover:bg-gray-300`
+          }
+        >
+          <Users size={20} /> Customers
+        </NavLink>
+
+        {/* Settings */}
+        <NavLink
+          to="/dashboard/settings"
+          className={({ isActive }) =>
+            `p-2 rounded-xl flex items-center gap-2 ${
+              isActive ? "bg-gray-400" : ''
+            } hover:bg-gray-300`
+          }
+        >
+          <Settings size={20} /> Settings
+        </NavLink>
+
+        {/* Reports */}
+        <NavLink
+          to="/dashboard/reports"
+          className={({ isActive }) =>
+            `p-2 rounded-xl flex items-center gap-2 ${
+              isActive ? "bg-gray-400" : ''
+            } hover:bg-gray-300`
+          }
+        >
+          <FileText size={20} /> Reports
+        </NavLink>
+
+        {/* NOTIFICATIONS SECTION */}
+        <h2 className="text-black font-bold uppercase text-sm mt-4 mb-2">
+          Notifications
+        </h2>
+
+        {/* Transactions */}
+        <NavLink
+          to="/dashboard/transactions"
+          className={({ isActive }) =>
+            `p-2 rounded-xl flex items-center gap-2 ${
+              isActive ? "bg-gray-400" : ''
+            } hover:bg-gray-300`
+          }
+        >
           <CreditCard size={20} /> Transactions
-        </Link>
-        <Link to="/messages" className="hover:bg-gray-400 p-2 rounded-xl flex items-center gap-2">
+        </NavLink>
+
+        {/* Messages */}
+        <NavLink
+          to="/dashboard/messages"
+          className={({ isActive }) =>
+            `p-2 rounded-xl flex items-center gap-2 ${
+              isActive ? "bg-gray-400" : ''
+            } hover:bg-gray-300`
+          }
+        >
           <Mail size={20} /> Messages
-        </Link>
+        </NavLink>
       </nav>
     </aside>
   );
