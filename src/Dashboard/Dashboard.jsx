@@ -1,6 +1,6 @@
 import React from 'react'
-import useFetch from '../hooks/useFetch'
-import Charts from '../Components/Charts.jsx'
+import useFetch from '../hooks/useFetch.jsx'
+import Charts from './Charts.jsx'
 
 const Dashboard = () => {
     const { data: products, error, loading } = useFetch("/products")
@@ -15,10 +15,7 @@ const Dashboard = () => {
 
     return (
         <div className="p-3">
-            <h1 className="text-2xl font-bold mb-4 text-center text-red-500 underline">
-                Dashboard
-            </h1>
-
+            
             {/* Responsive Cards */}
             <div className="
                 grid 

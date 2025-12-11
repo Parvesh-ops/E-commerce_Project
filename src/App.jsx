@@ -51,8 +51,8 @@ import About from './Pages/About.jsx'
 import Contact from './Pages/Contact.jsx'
 import Cart from './Pages/Cart.jsx'
 import BuyNow from './Components/BuyNow.jsx'
-import DashboardLayout from './Components/DashboardLayout.jsx'
-import Dashboard from './Pages/Dashboard.jsx'
+import DashboardLayout from './Dashboard/DashboardLayout.jsx'
+import Dashboard from './Dashboard/Dashboard.jsx'
 
 
 
