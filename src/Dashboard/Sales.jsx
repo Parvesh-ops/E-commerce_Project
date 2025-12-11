@@ -94,48 +94,86 @@ const Sales = () => {
       <div className="mt-8 bg-white shadow rounded-xl p-6">
         <h2 className="text-lg font-semibold mb-4">Recent Sales</h2>
 
-        <div className="overflow-x-auto">
-          <table className="w-full border rounded-lg overflow-hidden">
-            <thead className="bg-gray-100 text-left text-sm">
-              <tr>
-                <th className="p-3">Customer</th>
-                <th className="p-3">Product</th>
-                <th className="p-3">Amount</th>
-                <th className="p-3">Status</th>
-              </tr>
-            </thead>
+       <div className="overflow-x-auto">
+  <table className="w-full border rounded-lg overflow-hidden">
+    <thead className="bg-gray-100 text-left text-sm">
+      <tr>
+        <th className="p-3">Customer</th>
+        <th className="p-3">Country</th>
+        <th className="p-3">Contact No</th>
+        <th className="p-3">Product</th>
+        <th className="p-3">Amount</th>
+        <th className="p-3">Status</th>
+      </tr>
+    </thead>
 
-            <tbody className="text-sm">
-              <tr className="border-b">
-                <td className="p-3">Amit Sharma</td>
-                <td className="p-3">Nike Shoes</td>
-                <td className="p-3">$120</td>
-                <td className="p-3 text-green-600 font-semibold">Completed</td>
-              </tr>
+    <tbody className="text-sm">
+      <tr className="border-b">
+        <td className="p-3">Amit Sharma</td>
+        <td className="p-3">Nepal</td>
+        <td className="p-3">+977 9812345678</td>
+        <td className="p-3">Nike Shoes</td>
+        <td className="p-3">$120</td>
+        <td className="p-3 text-green-600 font-semibold">Completed</td>
+      </tr>
 
-              <tr className="border-b">
-                <td className="p-3">Sara Karki</td>
-                <td className="p-3">iPhone 13 Case</td>
-                <td className="p-3">$25</td>
-                <td className="p-3 text-yellow-500 font-semibold">Pending</td>
-              </tr>
+      <tr className="border-b">
+        <td className="p-3">Sara Karki</td>
+        <td className="p-3">Nepal</td>
+        <td className="p-3">+977 9801234567</td>
+        <td className="p-3">iPhone 13 Case</td>
+        <td className="p-3">$25</td>
+        <td className="p-3 text-yellow-500 font-semibold">Pending</td>
+      </tr>
 
-              <tr className="border-b">
-                <td className="p-3">Binod Rai</td>
-                <td className="p-3">T-Shirt</td>
-                <td className="p-3">$18</td>
-                <td className="p-3 text-green-600 font-semibold">Completed</td>
-              </tr>
+      <tr className="border-b">
+        <td className="p-3">Binod Rai</td>
+        <td className="p-3">India</td>
+        <td className="p-3">+91 9876543210</td>
+        <td className="p-3">T-Shirt</td>
+        <td className="p-3">$18</td>
+        <td className="p-3 text-green-600 font-semibold">Completed</td>
+      </tr>
 
-              <tr>
-                <td className="p-3">Prakash Limbu</td>
-                <td className="p-3">Smart Watch</td>
-                <td className="p-3">$95</td>
-                <td className="p-3 text-red-500 font-semibold">Cancelled</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <tr className="border-b">
+        <td className="p-3">Prakash Limbu</td>
+        <td className="p-3">Nepal</td>
+        <td className="p-3">+977 9811122233</td>
+        <td className="p-3">Smart Watch</td>
+        <td className="p-3">$95</td>
+        <td className="p-3 text-red-500 font-semibold">Cancelled</td>
+      </tr>
+
+      <tr className="border-b">
+        <td className="p-3">Maya Thapa</td>
+        <td className="p-3">USA</td>
+        <td className="p-3">+1 555-123-4567</td>
+        <td className="p-3">Laptop Bag</td>
+        <td className="p-3">$45</td>
+        <td className="p-3 text-green-600 font-semibold">Completed</td>
+      </tr>
+
+      <tr className="border-b">
+        <td className="p-3">Ramesh Gurung</td>
+        <td className="p-3">Nepal</td>
+        <td className="p-3">+977 9812233445</td>
+        <td className="p-3">Headphones</td>
+        <td className="p-3">$60</td>
+        <td className="p-3 text-yellow-500 font-semibold">Pending</td>
+      </tr>
+
+      <tr>
+        <td className="p-3">Sita Magar</td>
+        <td className="p-3">UK</td>
+        <td className="p-3">+44 7700 900123</td>
+        <td className="p-3">Sunglasses</td>
+        <td className="p-3">$35</td>
+        <td className="p-3 text-red-500 font-semibold">Cancelled</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
       </div>
       
       </div>
