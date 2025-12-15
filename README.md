@@ -5,6 +5,7 @@ A modern, responsive, and user-friendly e-commerce web application designed for 
 Demo:
 ![image](https://github.com/Parvesh-ops/E-commerce_Project/blob/42024e7507fc2d55f16bd8f38ae3b4e4e486e3ca/MixCollage-09-Nov-2025-05-01-PM-3389.jpg)
 ![image](https://github.com/Parvesh-ops/E-commerce_Project/blob/51a9027b8a6a1b84b35f237899aae31884fa3d19/MixCollage-09-Nov-2025-05-02-PM-3098.jpg)
+![image](https://github.com/Parvesh-ops/E-commerce_Project/blob/265fb2ddc410d68b80e8bd66831d19e48652c9fa/Screenshot%20(43).png)
 
 
 ✨ Key Features
