@@ -1,26 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {
-    DollarSign,
-    ShoppingCart,
-    Users,
-    TrendingUp,
-} from "lucide-react";
-
-import {
-    LineChart,
-    Line,
-    CartesianGrid,
-    XAxis,
-    YAxis,
-    Tooltip,
-    BarChart,
-    Bar,
-    PieChart,
-    Pie,
-    Cell,
-    ResponsiveContainer,
-} from "recharts";
+import { DollarSign,ShoppingCart,Users,TrendingUp,} from "lucide-react";
+import {LineChart,Line,CartesianGrid,XAxis,YAxis,Tooltip,BarChart,Bar,  ResponsiveContainer,} from "recharts";
 
 const Dashboard = () => {
     const [products, setProducts] = useState([]);

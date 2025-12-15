@@ -50,7 +50,7 @@ const AdminLogin = () => {
 
         {/* Footer Note */}
         <p className="mt-6 text-gray-500 dark:text-gray-400 text-xs md:text-sm">
-          Powered by Auth0. Your credentials are secure.
+          Powered by Auth0. Your credentials are secured.
         </p>
       </div>
     </div>
