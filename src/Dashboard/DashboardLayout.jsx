@@ -24,7 +24,7 @@
 // export default DashboardLayout;
 
 
-// //Using Auth0
+//Using Auth0
 // import React from "react";
 // import Sidebar from './Sidebar';
 // import Topbar from "./Topbar";
@@ -92,7 +92,7 @@ const DashboardContent = () => (
 // Protected Dashboard: handles authentication
 const ProtectedDashboard = () => {
   const { isLoading, isAuthenticated, user } = useAuth0();
-  const ADMIN_EMAIL = "admin@gmail.com";
+  const ADMIN_EMAIL = "arveshchaudhary@gmail.com";
 
   if (isLoading) return <div className="text-center p-10">Loading...</div>;
 
@@ -100,7 +100,7 @@ const ProtectedDashboard = () => {
   if (!isAuthenticated) return <AdminLogin />;
 
   // Logged in but not admin → access denied
- if (user?.email === ADMIN_EMAIL) {
+  if (user?.email !== ADMIN_EMAIL) {
     return (
       <div className="text-center p-10 text-red-600">
         Access Denied! You are not an admin.
@@ -108,22 +108,21 @@ const ProtectedDashboard = () => {
     );
   }
 
+
   // Logged in as admin → show dashboard
   return <DashboardContent />;
 };
 
 // Main Layout with Auth0 provider
 const DashboardLayout = () => {
-  const redirectUri =
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:5173/dashboard"
-      : "https://yourproductiondomain.com/dashboard";
-
   return (
     <Auth0Provider
       domain="dev-3wey8x257lqdnzgj.us.auth0.com"
       clientId="eKam3hxVlcZE8og6iWuLpDa1X8j60g5T"
-      authorizationParams={{ redirect_uri: redirectUri }}
+      authorizationParams={{
+        redirect_uri: "http://localhost:5173/dashboard",
+      }}
+
     >
       <ProtectedDashboard />
     </Auth0Provider>

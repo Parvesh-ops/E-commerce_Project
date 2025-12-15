@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { 
   User, Mail, Lock, Bell, Globe, CreditCard, Shield, 
-  Eye, EyeOff, Save, Camera, Store, Package, 
-  Moon, Sun, LogOut, Trash2, Check, Sliders
+  Eye, EyeOff, Save, Camera, Store, 
+  LogOut, Trash2, Check, Sliders
 } from 'lucide-react';
+import { useNavigate } from "react-router-dom";
 
 export default function Settings() {
+  const navigate = useNavigate()
   const [activeTab, setActiveTab] = useState('profile');
-  const [darkMode, setDarkMode] = useState(false);
   const [notifications, setNotifications] = useState({
     orderUpdates: true,
     newProducts: true,
@@ -51,7 +52,9 @@ export default function Settings() {
               <h1 className="text-3xl font-bold text-gray-900">Settings</h1>
               <p className="mt-1 text-sm text-gray-500">Manage your account and store preferences</p>
             </div>
-            <button className="flex items-center gap-2 px-4 py-2 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors">
+            <button 
+            onClick={() => navigate('/dashboard')}
+            className="flex items-center gap-2 px-4 py-2 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors">
               <LogOut className="w-4 h-4" />
               Logout
             </button>

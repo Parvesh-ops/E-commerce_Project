@@ -11,7 +11,7 @@ const AdminLogin = () => {
 
   useEffect(() => {
   if (isAuthenticated) {
-    console.log("Logged in user:", user); // <-- Check the email here
+    console.log("Logged in user:", user);
     if (user?.email === ADMIN_EMAIL) {
       navigate("/dashboard");
     } else {

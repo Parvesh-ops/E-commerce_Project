@@ -107,7 +107,7 @@ const Customers = () => {
           </div>
           <div>
             <p className="text-gray-500 text-sm">Inactive Customers</p>
-            <h2 className="text-xl font-semibold">2</h2>
+            <h2 className="text-xl font-semibold">3</h2>
           </div>
         </div>
       </div>
