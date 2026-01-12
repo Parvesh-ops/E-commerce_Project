@@ -1,15 +1,5 @@
 import { NavLink } from "react-router-dom";
-import {
-  Home,
-  BarChart2,
-  DollarSign,
-  ShoppingCart,
-  Users,
-  Settings,
-  FileText,
-  CreditCard,
-  Mail
-} from "lucide-react";
+import {Home,BarChart2,DollarSign,ShoppingCart,Users,Settings,FileText,CreditCard,Mail} from "lucide-react";
 
 export default function Sidebar() {
   const linkClasses = ({ isActive }) =>
