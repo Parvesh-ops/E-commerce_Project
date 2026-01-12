@@ -60,7 +60,7 @@ import Sales from './Dashboard/Sales.jsx'
 import Items from './Dashboard/Items.jsx'
 import Customers from './Dashboard/Customers.jsx'
 import Settings from './Dashboard/Settings.jsx'
-import AdminLogin from './Dashboard/AdminLogin.jsx'
+// import AdminLogin from './Dashboard/AdminLogin.jsx'
 
 
 
@@ -113,7 +113,7 @@ const App = () => {
       {path : 'items' , element :<Items />},
       {path : 'customers' , element :<Customers />},
       {path : 'settings' , element :<Settings />},
-      {path : 'adminlogin' , element :<AdminLogin />},
+      // {path : 'adminlogin' , element :<AdminLogin />},
       
     ]
   }
